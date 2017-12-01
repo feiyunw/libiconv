@@ -27,7 +27,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=compile
 LIBTOOL_LINK = $(LIBTOOL) --mode=link
 LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
 LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=uninstall
-WINDRES = @WINDRES@
+RC = @RC@
 RM = rm -f
 @SET_MAKE@
 
@@ -84,7 +84,7 @@ iconv.@OBJEXT@ : $(srcdir)/iconv.c
 	$(CC) -c $(INCLUDES) -I../lib $(CFLAGS) $(CPPFLAGS) -DINSTALLDIR=\"$(bindir)\" -DLOCALEDIR=\"$(localedir)\" $(srcdir)/iconv.c
 
 iconv.res : $(srcdir)/../windows/iconv.rc
-	$(WINDRES) `$(SHELL) $(srcdir)/../windows/windres-options --escape $(PACKAGE_VERSION)` -i $(srcdir)/../windows/iconv.rc -o iconv.res --output-format=coff
+	$(RC) `$(SHELL) $(srcdir)/../windows/windres-options --escape $(PACKAGE_VERSION)` -i $(srcdir)/../windows/iconv.rc -o iconv.res --output-format=coff
 
 # The following rule is necessary to avoid a toplevel "make -n check" failure.
 ../lib/libiconv.la :
