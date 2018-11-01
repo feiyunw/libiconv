@@ -39,12 +39,13 @@ if [ ! -d "${WindowsSdkDir}" ]; then
 fi
 
 # Set WindowsSDKVersion
+#WindowsSDKVersion='10.0.16299.0'
 #WindowsSDKVersion='10.0.15063.0'
 #WindowsSDKVersion='10.0.14393.0'
 #WindowsSDKVersion='10.0.10586.0'
 #WindowsSDKVersion='10.0.10240.0'
 if [ -z "${WindowsSDKVersion}" ]; then
-    WindowsSDKVersion='10.0.16299.0'
+    WindowsSDKVersion='10.0.17134.0'
 fi
 
 # Set VSINSTALLDIR
@@ -57,9 +58,8 @@ if [ -z "${VSINSTALLDIR}" ]; then
 fi
 
 # Set VSToolsVersion
-VSToolsVersion='14.12.25827'
 if [ -z "${VSToolsVersion}" ]; then
-    VSToolsVersion='14.11.25503'
+    VSToolsVersion='14.15.26726'
 fi
 
 echo PlatformTarget=${PlatformTarget}
